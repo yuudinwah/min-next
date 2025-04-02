@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 267 75% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 267 75% 95%;
+    --accent-foreground: 267 75% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 267 75% 50%;
+    --radius: 0.5rem;
+
+    /* Dashboard colors */
+    --color-blue: 210 100% 52%;
+    --color-green: 142 72% 50%;
+    --color-yellow: 38 92% 50%;
+    --color-red: 358 75% 59%;
+    --color-purple: 267 75% 50%;
+    --color-pink: 330 82% 60%;
+    --color-orange: 24 94% 50%;
+    --color-teal: 173 80% 40%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 267 75% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 267 75% 16%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 267 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-bg-1 {
+  background: linear-gradient(135deg, hsl(var(--color-blue) / 0.8), hsl(var(--color-purple) / 0.8));
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, hsl(var(--color-green) / 0.8), hsl(var(--color-teal) / 0.8));
+}
+
+.gradient-bg-3 {
+  background: linear-gradient(135deg, hsl(var(--color-orange) / 0.8), hsl(var(--color-red) / 0.8));
+}
+
+.gradient-bg-4 {
+  background: linear-gradient(135deg, hsl(var(--color-purple) / 0.8), hsl(var(--color-pink) / 0.8));
+}
+
+.dashboard-card {
+  @apply border-none shadow-md hover:shadow-lg transition-shadow;
+}
+
+.dashboard-stat-card {
+  @apply dashboard-card overflow-hidden relative;
+}
+
+.dashboard-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  @apply bg-primary;
+}
+
+.dashboard-stat-card.blue::before {
+  background-color: hsl(var(--color-blue));
+}
+
+.dashboard-stat-card.green::before {
+  background-color: hsl(var(--color-green));
+}
+
+.dashboard-stat-card.yellow::before {
+  background-color: hsl(var(--color-yellow));
+}
+
+.dashboard-stat-card.red::before {
+  background-color: hsl(var(--color-red));
+}
+
+.dashboard-stat-card.purple::before {
+  background-color: hsl(var(--color-purple));
+}
+
+.dashboard-stat-card.pink::before {
+  background-color: hsl(var(--color-pink));
+}
+
+.dashboard-stat-card.orange::before {
+  background-color: hsl(var(--color-orange));
+}
+
+.dashboard-stat-card.teal::before {
+  background-color: hsl(var(--color-teal));
+}
+
+.dashboard-chart-card {
+  @apply dashboard-card;
+}
+
